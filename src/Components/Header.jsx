@@ -48,7 +48,7 @@ const Header = () => {
           </div>
         </div>
 
-        <div className="hidden navbar-center lg:flex gap-3">
+        <div className="hidden navbar-center lg:flex gap-3 px-3">
           <NavLink to="/" className="text-white font-medium poppins">
             Home
           </NavLink>
@@ -101,17 +101,22 @@ const Header = () => {
               )}
             </div>
           ) : (
-            <NavLink to="/login" className="text-white font-medium poppins">
+            <div className="flex gap-2">
+              <NavLink to="/login" className="text-white font-medium poppins">
               Login
             </NavLink>
+              <NavLink to="/register" className="text-white font-medium poppins">
+              SignUp
+            </NavLink>
+            </div>
           )}
         </div>
-        <div className="">
+        <div className="px-2">
           <ThemeControl></ThemeControl>
         </div>
       </div>
       {openNav && (
-        <div className="lg:hidden p-1 flex flex-col gap-3 px-6 pb-6 bg-gray-700">
+        <div className="container mx-auto lg:hidden p-1 flex flex-col gap-3 px-6 pb-6 bg-gray-700">
           <div className="w-max flex flex-col  items-start gap-4">
             <NavLink to="/" className="text-white font-medium poppins">
               Home
@@ -166,9 +171,14 @@ const Header = () => {
               )}
             </div>
           ) : (
-            <NavLink to="/login" className="text-white font-medium poppins">
+           <div className="flex flex-col gap-2">
+             <NavLink to="/login" className="text-white font-medium poppins">
               Login
+            </NavLink> 
+            <NavLink to="/login" className="text-white font-medium poppins">
+              SignUp
             </NavLink>
+           </div>
           )}
         </div>
       )}
