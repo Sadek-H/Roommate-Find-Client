@@ -108,7 +108,7 @@ const Mylisting = () => {
                         className="modal"
                       >
                         <div className="modal-box w-11/12 max-w-2xl rounded-xl">
-                         <Update listing={listing}  />
+                       <Update listing={listing} setMyListings={setMyListings} />
                           <div className="modal-action">
                             <form method="dialog"></form>
                           </div>

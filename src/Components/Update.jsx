@@ -4,46 +4,50 @@ import { FaUsersViewfinder } from "react-icons/fa6";
 import Swal from "sweetalert2";
 import { FaSearchPlus } from "react-icons/fa";
 
-const Update = ({listing}) => {
+const Update = ({ listing, setMyListings }) => {
   const { user } = useContext(AuthContext);
   const [updatemate, setupdateMate] = useState(listing || {});
 
   useEffect(() => {
     setupdateMate(listing);
   }, [listing]);
- 
+
   const handleUpdate = (e) => {
     e.preventDefault();
     const form = e.target;
     let formdata = new FormData(form);
     let updateformdata = Object.fromEntries(formdata.entries());
 
-    fetch(`https://roommate-finder-server-flax.vercel.app/roommates/${updatemate._id}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(updateformdata)
-    })
-        .then((res) => res.json())
-        .then((data) => {
-         
-          if (data.modifiedCount) {
-        
-            Swal.fire({
-              position: "center",
-              icon: "success",
-              title: "Item updated successfully.",
-              showConfirmButton: false,
-              timer: 1500,
-            });
-    
-           }
-            document.getElementById(`update-modal-${listing._id}`).close();
-        });
+    fetch(
+      `https://roommate-finder-server-flax.vercel.app/roommates/${updatemate._id}`,
+      {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(updateformdata),
+      }
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.modifiedCount > 0) {
+          setMyListings((prevListings) =>
+            prevListings.map((item) =>
+              item._id === listing._id ? { ...item, ...updateformdata } : item
+            )
+          );
 
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Item updated successfully.",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
+        document.getElementById(`update-modal-${listing._id}`).close();
+      });
   };
-
 
   return (
     <div className="container mx-auto px-4">
@@ -195,13 +199,17 @@ const Update = ({listing}) => {
             />
           </div>
           <div className="flex justify-center items-center md:col-span-2 gap-2">
-             <button type="submit" className="text-center btn btn-primary   btn-wide text-white text-lg poppins  shadow-md hover:scale-105 duration-200">
-                     <FaSearchPlus /> Update
-                   </button>
-                   <form method="dialog">
-
-                   <button className="text-center btn btn-secondary   btn-wide text-white text-lg poppins  shadow-md hover:scale-105 duration-200">Close</button>
-                   </form>
+            <button
+              type="submit"
+              className="text-center btn btn-primary   btn-wide text-white text-lg poppins  shadow-md hover:scale-105 duration-200"
+            >
+              <FaSearchPlus /> Update
+            </button>
+            <form method="dialog">
+              <button className="text-center btn btn-secondary   btn-wide text-white text-lg poppins  shadow-md hover:scale-105 duration-200">
+                Close
+              </button>
+            </form>
           </div>
         </form>
       </div>
