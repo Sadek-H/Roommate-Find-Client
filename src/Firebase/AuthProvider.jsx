@@ -6,6 +6,8 @@ import { auth } from './authconfig';
 const provider =new GoogleAuthProvider();
 const AuthProvider = ({children}) => {
     let [user,setUser] = useState(null);
+     const [loading, setLoading] = useState(true);
+
     let googlesignin=()=>{
         return signInWithPopup(auth,provider);
     }
@@ -24,6 +26,7 @@ const AuthProvider = ({children}) => {
     useEffect(()=>{
         const unSubscribe = onAuthStateChanged(auth,(currentUser) => {
             setUser(currentUser);
+            setLoading(false);
         })
         return()=>{
             unSubscribe()
@@ -38,6 +41,7 @@ const AuthProvider = ({children}) => {
         signoutuser,
         googlesignin,
         SignInuser,
+        loading,
 
     }
     return <AuthContext value={Authdata}>

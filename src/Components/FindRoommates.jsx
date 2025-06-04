@@ -31,8 +31,8 @@ const FindRoommates = () => {
     <div className="container mx-auto min-h-screen bg-gradient-to-r from-orange-100 to-amber-50 py-10 px-4">
       <div className="max-w-4xl mx-auto bg-white shadow-xl rounded-xl p-8">
         <div className="flex justify-center items-center gap-2">
-          <FaListUl />{" "}
-          <h2 className="text-4xl font-bold poppins  text-gray-800 ">
+          <FaListUl  className="w-4 h-4 lg:w-8 lg:h-8"/>
+          <h2 className="text-2xl lg:text-4xl font-bold poppins  text-gray-800 ">
             Add Roommate Listing
           </h2>
         </div>
