@@ -5,7 +5,7 @@ import Featurecard from './Featurecard';
 const Featuredmates = () => {
    let [mate,setMate] = useState([]);
     useEffect(()=>{
-        fetch('http://localhost:3000/roommates')
+        fetch('https://roommate-finder-server-flax.vercel.app/roommates')
         .then(res=>res.json())
         .then(data=>setMate(data))
     },[mate])

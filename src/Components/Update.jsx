@@ -18,7 +18,7 @@ const Update = ({listing}) => {
     let formdata = new FormData(form);
     let updateformdata = Object.fromEntries(formdata.entries());
 
-    fetch(`http://localhost:3000/roommates/${updatemate._id}`, {
+    fetch(`https://roommate-finder-server-flax.vercel.app/roommates/${updatemate._id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

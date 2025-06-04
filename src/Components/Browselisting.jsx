@@ -11,7 +11,7 @@ const BrowseListing = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch('http://localhost:3000/roommates')
+    fetch('https://roommate-finder-server-flax.vercel.app/roommates')
       .then(res => res.json())
       .then(data => setListings(data))
       .catch(err => console.error(err))

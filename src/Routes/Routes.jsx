@@ -40,7 +40,7 @@ const router = createBrowserRouter([
         { 
           path:'/details/:id',
           element:<Privateroutes><Detailes></Detailes></Privateroutes>,
-          loader:()=>fetch('http://localhost:3000/roommates')
+          loader:()=>fetch('https://roommate-finder-server-flax.vercel.app/roommates')
         },
         {
           path:'browselisting',
@@ -50,7 +50,7 @@ const router = createBrowserRouter([
         {
           path:'mylisting',
          element:<Privateroutes><Mylisting></Mylisting></Privateroutes>,
-          loader:()=> fetch('http://localhost:3000/roommates'),
+          loader:()=> fetch('https://roommate-finder-server-flax.vercel.app/roommates'),
           hydrateFallbackElement: <Loader></Loader>
         }
     ]

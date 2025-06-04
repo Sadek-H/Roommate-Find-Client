@@ -30,7 +30,7 @@ const Mylisting = () => {
       confirmButtonText: "Yes, delete it!",
     }).then(async (res) => {
       if (res.isConfirmed) {
-        await fetch(`http://localhost:3000/roommates/${id}`, {
+        await fetch(`https://roommate-finder-server-flax.vercel.app/roommates/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

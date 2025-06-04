@@ -10,7 +10,7 @@ const FindRoommates = () => {
         let formdata = new FormData(form);
         let alldata = Object.fromEntries(formdata.entries());
         console.log(alldata);
-        fetch('http://localhost:3000/roommates',{
+        fetch('https://roommate-finder-server-flax.vercel.app/roommates',{
           method: "POST",
           headers:{ 
             "content-type": "application/json",
