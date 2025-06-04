@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Featurecard from './Featurecard';
+import Loader from './Loader';
 
 
 const Featuredmates = () => {
@@ -8,7 +9,11 @@ const Featuredmates = () => {
         fetch('https://roommate-finder-server-flax.vercel.app/roommates')
         .then(res=>res.json())
         .then(data=>setMate(data))
-    },[mate])
+    },[])
+
+    if( mate.length == 0){
+         return <Loader></Loader>
+    }
     return (
        <div>
         <h2 className='text-center text-blue-800 text-3xl poppins font-extrabold p-1'>Looking Your Roommates</h2>
