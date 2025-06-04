@@ -103,11 +103,14 @@ const Header = () => {
           ) : (
             <div className="flex items-center  gap-2">
               <NavLink to="/login" className="text-white font-medium poppins">
-              Login
-            </NavLink>
-              <NavLink to="/register" className="text-white font-medium poppins">
-              SignUp
-            </NavLink>
+                Login
+              </NavLink>
+              <NavLink
+                to="/register"
+                className="text-white font-medium poppins"
+              >
+                SignUp
+              </NavLink>
             </div>
           )}
         </div>
@@ -171,14 +174,17 @@ const Header = () => {
               )}
             </div>
           ) : (
-           <div className="w-max flex flex-col gap-2">
-             <NavLink to="/login" className=" text-white font-medium poppins">
-              Login
-            </NavLink> 
-            <NavLink to="/register" className="text-white font-medium poppins">
-              SignUp
-            </NavLink>
-           </div>
+            <div className="w-max flex flex-col gap-2">
+              <NavLink to="/login" className=" text-white font-medium poppins">
+                Login
+              </NavLink>
+              <NavLink
+                to="/register"
+                className="text-white font-medium poppins"
+              >
+                SignUp
+              </NavLink>
+            </div>
           )}
         </div>
       )}
