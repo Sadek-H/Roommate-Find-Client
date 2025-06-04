@@ -30,7 +30,8 @@ const Update = ({ listing, setMyListings }) => {
     )
       .then((res) => res.json())
       .then((data) => {
-        if (data.modifiedCount > 0) {
+        if (data.modifiedCount) {
+          
           setMyListings((prevListings) =>
             prevListings.map((item) =>
               item._id === listing._id ? { ...item, ...updateformdata } : item
