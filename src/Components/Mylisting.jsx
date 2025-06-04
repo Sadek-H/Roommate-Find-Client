@@ -30,9 +30,12 @@ const Mylisting = () => {
       confirmButtonText: "Yes, delete it!",
     }).then(async (res) => {
       if (res.isConfirmed) {
-        await fetch(`https://roommate-finder-server-flax.vercel.app/roommates/${id}`, {
-          method: "DELETE",
-        })
+        await fetch(
+          `https://roommate-finder-server-flax.vercel.app/roommates/${id}`,
+          {
+            method: "DELETE",
+          }
+        )
           .then((res) => res.json())
           .then(async (data) => {
             if (data.deletedCount) {
@@ -82,7 +85,10 @@ const Mylisting = () => {
                 </tr>
               ) : (
                 myListings.map((listing) => (
-                  <tr key={listing._id} className="hover:bg-indigo-50 transition">
+                  <tr
+                    key={listing._id}
+                    className="hover:bg-indigo-50 transition"
+                  >
                     <td className="px-6 py-4 font-semibold text-indigo-700">
                       {listing.title}
                     </td>
@@ -108,7 +114,10 @@ const Mylisting = () => {
                         className="modal"
                       >
                         <div className="modal-box w-11/12 max-w-2xl rounded-xl">
-                       <Update listing={listing} setMyListings={setMyListings} />
+                          <Update
+                            listing={listing}
+                            setMyListings={setMyListings}
+                          />
                           <div className="modal-action">
                             <form method="dialog"></form>
                           </div>
