@@ -22,7 +22,7 @@ const Header = () => {
   return (
     <>
       <div className="container mx-auto navbar bg-black shadow-sm">
-        <div className="w-full px-8 flex justify-between lg:justify-start">
+        <div className="w-full px-1 flex justify-between lg:justify-start">
           <button
             onClick={handleBar}
             className="lg:hidden btn btn-square btn-ghost text-white hover:text-black"
@@ -116,7 +116,7 @@ const Header = () => {
         </div>
       </div>
       {openNav && (
-        <div className="container mx-auto lg:hidden p-1 flex flex-col gap-3 px-6 pb-6 bg-gray-700">
+        <div className="container mx-auto lg:hidden p-1 flex flex-col gap-3 px-6 pb-4 py-2 bg-gray-700">
           <div className="w-max flex flex-col  items-start gap-4">
             <NavLink to="/" className="text-white font-medium poppins">
               Home
@@ -171,11 +171,11 @@ const Header = () => {
               )}
             </div>
           ) : (
-           <div className="flex flex-col gap-2">
-             <NavLink to="/login" className="text-white font-medium poppins">
+           <div className="w-max flex flex-col gap-2">
+             <NavLink to="/login" className=" text-white font-medium poppins">
               Login
             </NavLink> 
-            <NavLink to="/login" className="text-white font-medium poppins">
+            <NavLink to="/register" className="text-white font-medium poppins">
               SignUp
             </NavLink>
            </div>
