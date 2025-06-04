@@ -31,7 +31,7 @@ const ThemeControl = () => {
 
       {/* Light mode (sun) */}
       <svg
-        className="swap-off w-4 h-4 fill-current"
+        className="swap-off w-8 h-8 fill-current"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
       >
@@ -40,7 +40,7 @@ const ThemeControl = () => {
 
       {/* Dark mode (moon) */}
       <svg
-        className="swap-on w-4 h-4 fill-current"
+        className="swap-on w-8 h-8 fill-current"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
       >
