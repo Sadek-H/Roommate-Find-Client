@@ -39,7 +39,7 @@ A modern web application for finding and listing roommates, built with **React**
    
    ```
 
-4. Open [http://localhost:5173](http://localhost:5173) in your browser.
+4. Open [https://fir-job-4414a.web.app/] in your browser.
 
 ## Project Structure
 
@@ -60,7 +60,7 @@ Create a `.env` file in the root directory and add your environment variables as
 
 ## Backend
 
-This client connects to a REST API server. Make sure to run or deploy the [Roommate Finder Server](https://github.com/your-username/roommate-finder-server) as well.
+ Connects to a REST API server.  The [Roommate Finder Server](https://roommate-finder-server-flax.vercel.app/).
 
 ## Scripts
 
