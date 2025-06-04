@@ -48,7 +48,7 @@ const Header = () => {
           </div>
         </div>
 
-        <div className="hidden navbar-center lg:flex gap-3 px-3">
+        <div className="hidden navbar-center lg:flex  gap-3 px-3">
           <NavLink to="/" className="text-white font-medium poppins">
             Home
           </NavLink>
@@ -101,7 +101,7 @@ const Header = () => {
               )}
             </div>
           ) : (
-            <div className="flex gap-2">
+            <div className="flex items-center  gap-2">
               <NavLink to="/login" className="text-white font-medium poppins">
               Login
             </NavLink>
