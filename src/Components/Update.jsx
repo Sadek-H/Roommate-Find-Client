@@ -27,8 +27,9 @@ const Update = ({listing}) => {
     })
         .then((res) => res.json())
         .then((data) => {
-          
+         
           if (data.modifiedCount) {
+        
             Swal.fire({
               position: "center",
               icon: "success",
@@ -36,7 +37,8 @@ const Update = ({listing}) => {
               showConfirmButton: false,
               timer: 1500,
             });
-          }
+    
+           }
             document.getElementById(`update-modal-${listing._id}`).close();
         });
 
