@@ -9,7 +9,7 @@ import { BsFillTelephoneFill } from "react-icons/bs";
 import { AuthContext } from "../Firebase/Authcontext";
 
 const Detailes = () => {
-    let {user} = use(AuthContext);
+  let { user } = use(AuthContext);
   const [matedata, setmateData] = useState(null);
   const [likeCount, setLikeCount] = useState(0);
   let [contacts, setContacts] = useState();
@@ -42,8 +42,8 @@ const Detailes = () => {
   } = matedata;
 
   const handleLike = () => {
-    if(user?.email == email){
-        return ;
+    if (user?.email == email) {
+      return;
     }
     setLikeCount((prev) => prev + 1);
     setContacts(contact);

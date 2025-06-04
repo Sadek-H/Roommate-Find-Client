@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router';
-import { CiLocationOn } from 'react-icons/ci';
-import { FaMoneyBillWave } from 'react-icons/fa';
-import { MdBedroomParent, MdEventAvailable } from 'react-icons/md';
-import Loader from './Loader';
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router";
+import { CiLocationOn } from "react-icons/ci";
+import { FaMoneyBillWave } from "react-icons/fa";
+import { MdBedroomParent, MdEventAvailable } from "react-icons/md";
+import Loader from "./Loader";
 
 const BrowseListing = () => {
   const [listings, setListings] = useState([]);
@@ -11,10 +11,10 @@ const BrowseListing = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch('https://roommate-finder-server-flax.vercel.app/roommates')
-      .then(res => res.json())
-      .then(data => setListings(data))
-      .catch(err => console.error(err))
+    fetch("https://roommate-finder-server-flax.vercel.app/roommates")
+      .then((res) => res.json())
+      .then((data) => setListings(data))
+      .catch((err) => console.error(err))
       .finally(() => setLoading(false));
   }, []);
 
@@ -34,10 +34,22 @@ const BrowseListing = () => {
             <thead className="bg-indigo-100 text-indigo-800 uppercase text-xs font-bold tracking-wide">
               <tr>
                 <th className="px-6 py-5 poppins">Title</th>
-                <th className="px-6 py-5 flex items-center gap-2 poppins"><CiLocationOn className="inline" />Location</th>
-                <th className="px-6 py-5 poppins"><FaMoneyBillWave className="inline mr-1" />Rent</th>
-                <th className="px-6 py-5 poppins"><MdBedroomParent className="inline mr-1" />Room Type</th>
-                <th className="px-6 py-5 poppins"><MdEventAvailable className="inline mr-1" />Available</th>
+                <th className="px-6 py-5 flex items-center gap-2 poppins">
+                  <CiLocationOn className="inline" />
+                  Location
+                </th>
+                <th className="px-6 py-5 poppins">
+                  <FaMoneyBillWave className="inline mr-1" />
+                  Rent
+                </th>
+                <th className="px-6 py-5 poppins">
+                  <MdBedroomParent className="inline mr-1" />
+                  Room Type
+                </th>
+                <th className="px-6 py-5 poppins">
+                  <MdEventAvailable className="inline mr-1" />
+                  Available
+                </th>
                 <th className="px-6 py-5 text-center poppins">Action</th>
               </tr>
             </thead>
@@ -47,11 +59,15 @@ const BrowseListing = () => {
                   key={singlelist._id}
                   className="transition duration-300 hover:bg-indigo-100"
                 >
-                  <td className="px-6 py-4 font-semibold text-indigo-700 poppins">{singlelist.title}</td>
+                  <td className="px-6 py-4 font-semibold text-indigo-700 poppins">
+                    {singlelist.title}
+                  </td>
                   <td className="px-6 py-4 poppins">{singlelist.location}</td>
                   <td className="px-6 py-4 poppins">${singlelist.rent}</td>
                   <td className="px-6 py-4 poppins">{singlelist.roomType}</td>
-                  <td className="px-6 py-4 poppins">{singlelist.availability}</td>
+                  <td className="px-6 py-4 poppins">
+                    {singlelist.availability}
+                  </td>
                   <td className="px-6 py-4 text-center">
                     <Link
                       to={`/details/${singlelist._id}`}

@@ -14,7 +14,8 @@ const Footer = () => {
         <div>
           <h1 className="text-2xl font-bold text-white mb-3">RoomMateFinder</h1>
           <p>
-            The easiest way to connect with like-minded roommates. Built for trust, comfort, and convenience.
+            The easiest way to connect with like-minded roommates. Built for
+            trust, comfort, and convenience.
           </p>
         </div>
 
@@ -22,10 +23,26 @@ const Footer = () => {
         <div>
           <h2 className="text-lg font-semibold text-white mb-3">Quick Links</h2>
           <ul className="space-y-2">
-            <li><Link to="/" className="hover:underline">Home</Link></li>
-            <li><Link to="/browselisting" className="hover:underline">Browse Listings</Link></li>
-            <li><Link to="/findroommates" className="hover:underline">Add Listing</Link></li>
-            <li><Link to="/mylisting" className="hover:underline">My Listings</Link></li>
+            <li>
+              <Link to="/" className="hover:underline">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link to="/browselisting" className="hover:underline">
+                Browse Listings
+              </Link>
+            </li>
+            <li>
+              <Link to="/findroommates" className="hover:underline">
+                Add Listing
+              </Link>
+            </li>
+            <li>
+              <Link to="/mylisting" className="hover:underline">
+                My Listings
+              </Link>
+            </li>
           </ul>
         </div>
 
@@ -33,9 +50,21 @@ const Footer = () => {
         <div>
           <h2 className="text-lg font-semibold text-white mb-3">Legal</h2>
           <ul className="space-y-2">
-            <li><a href="/terms" className="hover:underline">Terms & Conditions</a></li>
-            <li><a href="/privacy" className="hover:underline">Privacy Policy</a></li>
-            <li><a href="/faq" className="hover:underline">FAQs</a></li>
+            <li>
+              <a href="/terms" className="hover:underline">
+                Terms & Conditions
+              </a>
+            </li>
+            <li>
+              <a href="/privacy" className="hover:underline">
+                Privacy Policy
+              </a>
+            </li>
+            <li>
+              <a href="/faq" className="hover:underline">
+                FAQs
+              </a>
+            </li>
           </ul>
         </div>
 
@@ -46,10 +75,18 @@ const Footer = () => {
           <p>Phone: +880 1234 567 890</p>
           <p>Address: Dhaka, Bangladesh</p>
           <div className="flex gap-4 mt-4 text-xl">
-            <a href="#" className="hover:text-indigo-400"><FaFacebookF /></a>
-            <a href="#" className="hover:text-indigo-400"><FaTwitter /></a>
-            <a href="#" className="hover:text-indigo-400"><FaInstagram /></a>
-            <a href="#" className="hover:text-indigo-400"><FaLinkedinIn /></a>
+            <a href="#" className="hover:text-indigo-400">
+              <FaFacebookF />
+            </a>
+            <a href="#" className="hover:text-indigo-400">
+              <FaTwitter />
+            </a>
+            <a href="#" className="hover:text-indigo-400">
+              <FaInstagram />
+            </a>
+            <a href="#" className="hover:text-indigo-400">
+              <FaLinkedinIn />
+            </a>
           </div>
         </div>
       </div>

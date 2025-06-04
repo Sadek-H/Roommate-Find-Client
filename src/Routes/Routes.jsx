@@ -1,7 +1,4 @@
-import {
-  createBrowserRouter,
-
-} from "react-router";
+import { createBrowserRouter } from "react-router";
 import Homelayout from "../Layout/Homelayout";
 import Register from "../Authentication/Register";
 import Login from "../Authentication/Login";
@@ -20,46 +17,59 @@ const router = createBrowserRouter([
     path: "/",
     Component: Homelayout,
     errorElement: <Notfound></Notfound>,
-    children:[
+    children: [
       {
-          index:true,
-          Component: Home,
+        index: true,
+        Component: Home,
       },
-        {
-          path:'/register',
-          Component:Register,
-        },
-        {
-          path:'/login',
-          Component:Login,
-        },
-        {
-          path:'/findroommates',
-         element:<Privateroutes><FindRoommates></FindRoommates></Privateroutes>
-        },
-        { 
-          path:'/details/:id',
-          element:<Privateroutes><Detailes></Detailes></Privateroutes>,
-          loader:()=>fetch('https://roommate-finder-server-flax.vercel.app/roommates')
-        },
-        {
-          path:'browselisting',
-          Component: BrowseListing,
-          hydrateFallbackElement:<Loader></Loader>
-        },
-        {
-          path:'mylisting',
-         element:<Privateroutes><Mylisting></Mylisting></Privateroutes>,
-          loader:()=> fetch('https://roommate-finder-server-flax.vercel.app/roommates'),
-          hydrateFallbackElement: <Loader></Loader>
-        }
-    ]
+      {
+        path: "/register",
+        Component: Register,
+      },
+      {
+        path: "/login",
+        Component: Login,
+      },
+      {
+        path: "/findroommates",
+        element: (
+          <Privateroutes>
+            <FindRoommates></FindRoommates>
+          </Privateroutes>
+        ),
+      },
+      {
+        path: "/details/:id",
+        element: (
+          <Privateroutes>
+            <Detailes></Detailes>
+          </Privateroutes>
+        ),
+        loader: () =>
+          fetch("https://roommate-finder-server-flax.vercel.app/roommates"),
+      },
+      {
+        path: "browselisting",
+        Component: BrowseListing,
+        hydrateFallbackElement: <Loader></Loader>,
+      },
+      {
+        path: "mylisting",
+        element: (
+          <Privateroutes>
+            <Mylisting></Mylisting>
+          </Privateroutes>
+        ),
+        loader: () =>
+          fetch("https://roommate-finder-server-flax.vercel.app/roommates"),
+        hydrateFallbackElement: <Loader></Loader>,
+      },
+    ],
   },
   //for all undifined routes
-  { 
-    path:'*',
-    Component:Notfound,
-   
+  {
+    path: "*",
+    Component: Notfound,
   },
 ]);
-export default router
+export default router;
