@@ -113,7 +113,7 @@ const Mylisting = () => {
                         id={`update-modal-${listing._id}`}
                         className="modal"
                       >
-                        <div className="modal-box w-11/12 max-w-2xl rounded-xl">
+                        <div className="modal-box w-11/12 max-w-2xl rounded-xl p-4 sm:p-6">
                           <Update
                             listing={listing}
                             setMyListings={setMyListings}
