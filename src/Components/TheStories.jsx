@@ -38,7 +38,7 @@ const TheStories = () => {
   ];
 
   return (
-    <section className="bg-white py-12 px-4 rounded-3xl shadow-lg my-10 max-w-7xl mx-auto">
+    <section className="container mx-auto bg-white py-12 px-4 rounded-3xl shadow-lg my-10">
       <Slide triggerOnce>
         <h2 className="text-3xl font-bold text-center text-indigo-700 mb-10">
           Success Stories from Our Users

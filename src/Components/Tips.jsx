@@ -10,7 +10,7 @@ import {
 
 const Tips = () => {
   return (
-    <section className="bg-indigo-50 py-12 px-4 rounded-3xl shadow-lg my-10 max-w-7xl mx-auto">
+    <section className="container mx-auto bg-indigo-50 py-12 px-4 rounded-3xl shadow-lg my-10">
       <div>
         <h2 className="text-3xl font-bold text-center text-indigo-700 mb-10">
           Tips for Finding the Perfect Roommate
