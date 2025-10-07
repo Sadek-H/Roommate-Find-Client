@@ -1,6 +1,6 @@
 # 🏠 Roommate Finder Client - Repository Details
 
-🌐 **Live Site:** [https://fir-job-4414a.web.app]()
+🌐 **Live Site:** [https://fir-job-4414a.web.app](https://fir-job-4414a.web.app/)
 
 
 ---
